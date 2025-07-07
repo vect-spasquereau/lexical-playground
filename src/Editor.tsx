@@ -54,6 +54,7 @@ import {
   TableHoverActionsPlugin,
   TableOfContentsPlugin,
   ToolbarPlugin,
+  TreeViewPlugin,
 } from './editor/plugins';
 import { PLAYGROUND_TRANSFORMERS } from './editor/plugins/markdown';
 import { ContentEditable } from './ui';
@@ -202,6 +203,7 @@ export function Editor(): JSX.Element {
           <CharacterLimitPlugin charset={isCharLimit ? 'UTF-16' : 'UTF-8'} maxLength={5} />
         )}
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
+        {showTreeView && <TreeViewPlugin />}
       </div>
     </>
   );

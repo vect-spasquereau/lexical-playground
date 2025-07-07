@@ -22,4 +22,5 @@ export {
 export { TableOfContentsPlugin } from './table-of-contents';
 export { TestRecorderPlugin } from './test-recorder';
 export { ToolbarPlugin } from './toolbar';
+export { TreeViewPlugin } from './tree-view';
 export { TypingPerfPlugin } from './typing-perf';

@@ -26,7 +26,7 @@ export function loadArchive(editor: LexicalEditor, value: ContentValue): void {
         }
       };
     })
-    .catch((error) => {
-      console.error('Failed to load archive:', error);
+    .catch(() => {
+      // Fail silently
     });
 }
