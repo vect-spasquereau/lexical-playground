@@ -20,12 +20,11 @@ import {
   NodeKey,
   SELECTION_CHANGE_COMMAND,
 } from 'lexical';
-import * as React from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import EquationEditor from '../ui/EquationEditor';
-import KatexRenderer from '../ui/KatexRenderer';
+import { EquationEditor, KatexRenderer } from '../../../ui';
+
 import { $isEquationNode } from './EquationNode';
 
 type EquationComponentProps = {
@@ -71,7 +70,7 @@ export default function EquationComponent({ equation, inline, nodeKey }: Equatio
       return mergeRegister(
         editor.registerCommand(
           SELECTION_CHANGE_COMMAND,
-          (payload) => {
+          () => {
             const activeElement = document.activeElement;
             const inputElem = inputRef.current;
             if (inputElem !== activeElement) {
@@ -83,7 +82,7 @@ export default function EquationComponent({ equation, inline, nodeKey }: Equatio
         ),
         editor.registerCommand(
           KEY_ESCAPE_COMMAND,
-          (payload) => {
+          () => {
             const activeElement = document.activeElement;
             const inputElem = inputRef.current;
             if (inputElem === activeElement) {
