@@ -1,0 +1,1 @@
+export { MentionPlugin } from './MentionPlugin';
