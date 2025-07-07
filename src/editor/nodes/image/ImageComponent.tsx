@@ -29,7 +29,7 @@ import {
 } from 'lexical';
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 
-import brokenImage from '../../../assets/broken-image.svg';
+import brokenImage from '../../../assets/image-broken.svg';
 import { ImageResizer } from '../../../ui';
 
 import { $isImageNode } from './ImageNode';
