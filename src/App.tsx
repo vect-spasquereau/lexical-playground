@@ -1,4 +1,5 @@
 import type { Klass } from 'lexical';
+import type { JSX } from 'react';
 
 import { CodeHighlightNode, CodeNode } from '@lexical/code';
 import { HashtagNode } from '@lexical/hashtag';
@@ -15,8 +16,23 @@ import { Editor } from './Editor';
 import { Settings } from './Settings';
 import { isDevPlayground } from './appSettings';
 import logo from './assets/lexical-logo.svg';
-import { SharedHistoryContext, TableContext, ToolbarContext, useSettings } from './context';
-import { EquationNode, ImageNode, InlineImageNode, KeywordNode, MentionNode, PageBreakNode } from './editor/nodes';
+import {
+  FlashMessageContext,
+  SettingsContext,
+  SharedHistoryContext,
+  TableContext,
+  ToolbarContext,
+  useSettings,
+} from './context';
+import {
+  EmojiNode,
+  EquationNode,
+  ImageNode,
+  InlineImageNode,
+  KeywordNode,
+  MentionNode,
+  PageBreakNode,
+} from './editor/nodes';
 import { DocsPlugin, PasteLogPlugin, TestRecorderPlugin, TypingPerfPlugin } from './editor/plugins';
 import { PlaygroundEditorTheme } from './themes';
 import { $prepopulatedRichText, buildImportMap } from './utils';
@@ -27,6 +43,7 @@ const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   AutoLinkNode,
   CodeHighlightNode,
   CodeNode,
+  EmojiNode,
   EquationNode,
   HashtagNode,
   HeadingNode,
@@ -89,4 +106,12 @@ function App() {
   );
 }
 
-export default App;
+export default function PlaygroundApp(): JSX.Element {
+  return (
+    <SettingsContext>
+      <FlashMessageContext>
+        <App />
+      </FlashMessageContext>
+    </SettingsContext>
+  );
+}
