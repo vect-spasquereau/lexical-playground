@@ -1,0 +1,1 @@
+export { PasteLogPlugin } from './PasteLogPlugin';

@@ -1,0 +1,1 @@
+export { FloatingTextFormatPlugin } from './FloatingTextFormatPlugin';
