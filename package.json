@@ -1,18 +1,21 @@
 {
-  "name": "vite-and-biome-starter",
+  "name": "lexical-playground",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://vect-spasquereau.github.io/lexical-playground/",
   "scripts": {
-    "dev": "vite",
     "build": "tsc -b && vite build",
     "compile": "tsc -noEmit",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
     "format": "biome format",
     "format:fix": "biome format --write",
     "format:imports": "biome check --formatter-enabled=false --linter-enabled=false --organize-imports-enabled=true",
     "format:imports:fix": "biome check --formatter-enabled=false --linter-enabled=false --organize-imports-enabled=true --write",
     "lint": "biome lint",
     "lint:fix": "biome lint --write",
+    "predeploy": "pnpm run build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -42,6 +45,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
+    "gh-pages": "^6.3.0",
     "globals": "^15.11.0",
     "typescript": "~5.6.3",
     "typescript-eslint": "^8.11.0",
