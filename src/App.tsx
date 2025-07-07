@@ -33,7 +33,13 @@ import {
   MentionNode,
   PageBreakNode,
 } from './editor/nodes';
-import { DocsPlugin, PasteLogPlugin, TestRecorderPlugin, TypingPerfPlugin } from './editor/plugins';
+import {
+  ContentLoaderPlugin,
+  DocsPlugin,
+  PasteLogPlugin,
+  TestRecorderPlugin,
+  TypingPerfPlugin,
+} from './editor/plugins';
 import { PlaygroundEditorTheme } from './themes';
 import { $prepopulatedRichText, buildImportMap } from './utils';
 
@@ -98,6 +104,7 @@ function App() {
               {isDevPlayground ? <PasteLogPlugin /> : null}
               {isDevPlayground ? <TestRecorderPlugin /> : null}
               {measureTypingPerf ? <TypingPerfPlugin /> : null}
+              {isDevPlayground ? <ContentLoaderPlugin /> : null}
             </ToolbarContext>
           </TableContext>
         </SharedHistoryContext>

@@ -1,6 +1,7 @@
 export { ActionsPlugin } from './actions';
 export { ComponentPickerPlugin } from './component-picker';
 export { CodeHighlightPlugin } from './code';
+export { ContentLoaderPlugin } from './content';
 export { DocsPlugin } from './docs';
 export { DraggableBlockPlugin } from './draggable-block';
 export { AutoEmojiPlugin, EmojiPlugin } from './emoji';

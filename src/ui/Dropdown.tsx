@@ -27,7 +27,7 @@ export function DropdownItem({
   title,
 }: {
   children: React.ReactNode;
-  className: string;
+  className?: string;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   title?: string;
 }) {
@@ -141,7 +141,7 @@ export function Dropdown({
 }: {
   disabled?: boolean;
   buttonAriaLabel?: string;
-  buttonClassName: string;
+  buttonClassName?: string;
   buttonIconClassName?: string;
   buttonLabel?: string;
   children: ReactNode;
